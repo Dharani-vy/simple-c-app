@@ -16,6 +16,16 @@ void sort_numbers(int arr[], int n) {
     }
 }
 
+int find_maximum(int arr[], int n) {
+    int max = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
 void process_string(char *str) {
     int i;
     for (i = 0; str[i]; i++) {
@@ -35,6 +45,9 @@ int main() {
         printf("%d ", numbers[i]);
     }
     printf("\n");
+
+    int max = find_maximum(numbers, n);
+    printf("Maximum Number: %d\n", max);
 
     process_string(string);
     printf("Processed String: '%s'\n", string);
